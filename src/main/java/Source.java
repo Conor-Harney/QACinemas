@@ -6,8 +6,6 @@ public class Source {
 	{
 		Interface m_view = new Interface();
 		while(true) {
-		
-			
 			m_view.newCustomer();
 		}
 	}

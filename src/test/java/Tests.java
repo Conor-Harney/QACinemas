@@ -45,8 +45,7 @@ public class Tests {
 	@Test 
 	public void chooseWrongScreening()
 	{
-		Interface i = new Interface();
-		i.choseScreening();
+		
 	}
 	@Test
 	public void testCalculateCostsDiscount()

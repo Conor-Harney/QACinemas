@@ -12,11 +12,11 @@ public class Screening {
 		return m_filmTitle;
 	}
 
-	public String getScreen() {
+	public String getScreen() {//return the screen name
 		return m_screen;
 	}
 
-	public String getTime() {
+	public String getTime() {//return the showing time 
 		return m_time;
 	}
 
@@ -29,7 +29,7 @@ public class Screening {
 	}
 	
 	public boolean checkChildAloud()
-	{
+	{//child tickets should not to showings of this kind 
 		if(m_ageRating == AgeRating.ChildAlowed) return true;
 		else return false;
 	}

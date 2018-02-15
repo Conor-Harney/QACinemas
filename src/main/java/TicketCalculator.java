@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.Vector;
 
-public class TicketCalculator {
+public class TicketCalculator {//Responsible for managing the tickets
 	
 	
 	Vector<String> m_priceList = new Vector<String>();//this list of prices will correspond to the customer type list 
@@ -35,7 +35,7 @@ public class TicketCalculator {
 	}
 
 	public TicketCalculator()
-	{
+	{//each customer type has a corresponding pricing 
 		m_priceList.add("8");
 		m_customerTypes.add("Standard");
 		m_priceList.add("6");
@@ -47,20 +47,18 @@ public class TicketCalculator {
 	}
 	
 	public Double CalculateCosts(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
-	{
-		
+	{//Add up the requested ticket costs
 		double total = 0;
 		total -= CheckForDiscountAmount(numOfStdTickets, NumOfOPATickets, NumOfStudentTickets, NumOfChildTickets);
 		total += numOfStdTickets * Double.parseDouble(m_priceList.get(0));
 		total += NumOfOPATickets * Double.parseDouble(m_priceList.get(1));
 		total += NumOfStudentTickets * Double.parseDouble(m_priceList.get(2));
 		total += NumOfChildTickets * Double.parseDouble(m_priceList.get(3));
-		
 		return total;
 	}
 	
 	private double CheckForDiscountAmount(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
-	{
+	{//athis wmethod will call all the valid discounts and apply the relevant ones 
 		double discount = 0;
 		if(m_currentDay == DAYS.Wednesday)
 		{
@@ -71,7 +69,7 @@ public class TicketCalculator {
 	}
 	
 	private double superWedensdayDiscount(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
-	{
+	{// one of the amazing deals currently running in QACinemas 
 		int ticketsRequested = numOfStdTickets+ NumOfOPATickets + NumOfStudentTickets+ NumOfChildTickets;
 		return ticketsRequested*2;
 	}
